@@ -152,6 +152,18 @@ acresLeft -= averageDailyAcres;
 // let fujiTons =
 // let galaTons =
 // let pinkTons =
+let fujiTons = []
+let galaTons = []
+let pinkTons = []
+for(let i = 0; i < 7; i++){
+    fujiTons.push(fujiAcres[i] * 6.5)
+    galaTons.push(galaAcres[i] * 6.5)
+    pinkTons.push(pinkAcres[i] * 6.5)
+}
+
+console.log(fujiTons)
+console.log(galaTons)
+console.log(pinkTons)
 
 
 
@@ -180,6 +192,20 @@ acresLeft -= averageDailyAcres;
 // let galaPounds =
 // let pinkPounds =
 
+let fujiPounds = 0
+let galaPounds = 0
+let pinkPounds = 0
+
+for(let i=0; i<7; i++){
+    fujiPounds = fujiPounds + fujiTons[i] *2000
+    galaPounds = galaPounds + galaTons[i] *2000
+    pinkPounds = pinkPounds + pinkTons[i]*2000
+
+}
+console.log(fujiPounds)
+console.log(galaPounds)
+console.log(pinkPounds)
+
 
 
 
@@ -207,6 +233,13 @@ acresLeft -= averageDailyAcres;
 // let galaProfit =
 // let pinkProfit =
 
+let fujiProfit = fujiPounds * fujiPrice
+let galaProfit = galaPounds * galaPrice
+let pinkProfit = pinkPounds * pinkPrice
+
+console.log(fujiProfit)
+console.log(galaProfit)
+console.log(pinkProfit)
 
 
 
@@ -223,3 +256,5 @@ acresLeft -= averageDailyAcres;
 */
 
 // CODE HERE
+let totalProfit = fujiProfit+galaProfit+pinkProfit
+console.log(totalProfit)
