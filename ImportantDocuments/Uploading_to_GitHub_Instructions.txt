@@ -1,0 +1,29 @@
+uploading to github:
+```
+Step 1. navigate to the project folder. cd into it.open it in vscode using code .
+
+Step 2. open terminal and type: git init
+Note:This will initialize a git repository
+
+Step 3. then type: git add .
+Note: this will tell git to start tracking all the files in the folder
+
+Step 4. then we will type: git commit -m "your-message -here"
+Note: This will take a snapshot of the code and save it to the local git repository
+
+Step 5. Go over to Github and create a new repository.
+Note:do not add README and keep the folder public.
+
+Step 6. copy the commands under push an EXISTING repository from the command line section and paste them in your terminal and press enter.
+Note:the first commands establishes the connection between local git repository and your remote github repository.
+The second command renames the branch from master to main.
+The third command pushes your file to github and uses the -u flag which sets the upstream so that the next time you have to push you don't have to specify origin or branch.
+
+Step 7. Congratulations! your first commit was uploaded to github successfully.
+
+Step 8. if you make any changes to your file going forward all you have to do is repeat:
+git add .
+git commit -m"your message"
+git push
+and your code will be pushed to github
+```

@@ -1,366 +1,440 @@
-//////////////////////////// PROBLEM 1 ////////////////////////////
 /*
-  Create an object called me.
-  Give it a key of name with the value being your name, and another key of age with the value being your age.
+  Some of the following questions will ask you to use
+  arrow function syntax. On the problems that don't,
+  feel free to practice with any syntax.
 */
 
-//Code here
 
-
-
-//////////////////////////// PROBLEM 2 ////////////////////////////
-
-//Create an object saved to the variable dog.
-//The dog object should have the following properties:
-//name (a string), color (a string), age (a number),
-//and goodBoy/goodGirl (a boolean).
-
-//Code here
-
-
-
-//////////////////////////// PROBLEM 3 ////////////////////////////
-/* Print out the name of the dog you created in problem 2 using dot-notation. */
-
-//Code here
-
-
-
-//////////////////////////// PROBLEM 4 ////////////////////////////
-/* Print out the color of the dog you created in problem 2 using bracket-notation. */
-
-//Code here
-
-
-
-//////////////////////////// PROBLEM 5 ////////////////////////////
+////////////////// PROBLEM 1 ////////////////////
 /*
-  Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday.
-  Have the values to those keys be strings that are equal to your favorite thing in that category.
+  Create a function called helloWorld which simply console logs 'Hello, World!'
+  Call the function.
 */
 
-//Code here
-
-
-/*
-  After you've made your object, use bracket or dot notation to add another key named 'car' with the value being your favorite car and then another key named 'show' with the value being your favorite show.
-*/
-
-//Code here
-
-
-/*
-  Now use bracket or dot notation to change the value of the food key in your favoriteThings object to be 'Chicken Nuggets'
-  and change the value of the book key in your favoriteThings object to be 'Harry Potter'. (If they were either of those things already, change them to something else.)
-*/
-
-//Code here
-
-
-//////////////////////////// PROBLEM 6 ////////////////////////////
-
-// Do not edit the code below.
-var carDetails = {
-  color: 'red',
-  make: 'toyota',
-  model: 'tacoma',
-  year: 1994
+//CODE HERE
+function helloWorld() {
+  console.log('Hello, World!');
 }
-// Do not edit the code above.
+
+helloWorld();
+////////////////// PROBLEM 2 ////////////////////
 
 /*
-  Use object destructuring to save the property values from the object carDetails into new variables. 
+    Write an arrow function called 'jsNinja' that returns the string: 'I am a JavaScript ninja!'
 */
 
-//Code Here
+//CODE HERE
+function jsNinja() {
+  console.log('I am a JavaScript ninja!');
+}
 
+jsNinja();
 
-
-//////////////////////////// PROBLEM 7 ////////////////////////////
-
+////////////////// PROBLEM 3 ////////////////////
 /*
-  In the function below named greeting, it is receiving an object as a parameter. 
-  Use object destructuring to save the object properties to new variables. 
-  The property names are firstName, lastName, and title.
+  Create a function called printName which takes in a person's name and console logs it.
+  Ex. If 'Cameron' were passed in as the argument, Cameron would be console logged.
+  Call the function, passing in an argument.
 */
 
-function greeting( obj ) {
-  //Code Here
-  
-  // Do not edit the code below.
-  return 'Hello, ' + title + ' ' + firstName + ' ' + lastName + '!';
-  // Do not edit the code above.
+//CODE HERE
+function printName(name) {
+  console.log(name);
 }
 
 
-
-//////////////////////////// PROBLEM 8 ////////////////////////////
-
+printName('Mohamed');
+////////////////// PROBLEM 4 ////////////////////
 /*
-  Write a function called totalPopulation that will take in an object.
-  That object will have 4 properties named utah, california, texas and arizona.
-  The property values will be numbers.
-  Use object destructuring to save the property values to new variables.
-  Sum up the values and return the total number.
+  Create a function called greeting that
+  accepts name as its only parameter.
+  greeting should log the string 'Hello, '
+  plus the value of the name parameter.
+  Ex. If Jake were passed in as the argument, the function would log 'Hello, Jake'
+  Make sure to call your function and pass in an argument.
 */
 
-//Code Here
+//CODE HERE
+function greeting(name) {
+  console.log('Hello, ' + name)
+}
 
+greeting('Mohamed');
+greeting('Nourin');
 
-
-//////////////////////////// PROBLEM 9 ////////////////////////////
+////////////////// PROBLEM 5 ////////////////////
 
 /*
-  Write a function called ingredients that will take in an object. 
-  This object will have 3 properties named carb, fat, and protein. 
-  The property values will be strings. 
-  Use object destructuring to save the property values to new variables. 
-  Push these new variables to an array and return the array. 
+    Write an arrow function called 'compareNums' that takes in 2 parameters, 
+    which will be numbers. 
+    The function should return the bigger number. 
+    If the numbers are the same, just return the number.
+
+    Brownie points if you use a ternary statement (only spend significant time on this if you have wiggle room)
 */
 
-//Code Here
-
-
-
-//////////////////////////// PROBLEM 10 ////////////////////////////
-// Do not edit the code below.
-var user = {
-  name: 'Bryan',
-  age: 24,
-  pwHash: 'U+Ldlngx2BYQk',
-  email: 'BryanSmith33@gmail.com',
-  birthday: '05/02/1990',
-  username: 'bryansmith33'
+//CODE HERE
+const compareNums = (num1, num2) => {
+  return Math.max(num1, num2);
 };
-// Do not edit the code above.
 
+const result = compareNums(10, 5);
+console.log(result); 
+
+
+////////////////// PROBLEM 6 ////////////////////
 /*
-  Let's say I, the user, decided to change my name and email address to the following:
-  name -> 'Bryan G. Smith' and email -> 'bryan.smith@devmounta.in'.
-  Make that change without modifying the original object code above.
+  Create a function called add that takes in two parameters 
+  Inside, convert the arguments to be numbers (just in case strings get sent in)
+  The add function should RETURN the two parameters added together.
+  Create a variable outside the function called 'sum' and set it equal to add invoked (called), passing in 2 arguments.
 */
 
-//Code Here
+//CODE HERE
+function add(num1, num2) {
+  num1 = Number(num1);
+  num2 = Number(num2);
+  return num1 + num2;
+}
 
+var sum = add(5, 3);
+console.log(sum); 
 
-//////////////////////////// PROBLEM 11 ////////////////////////////
+////////////////// PROBLEM 7 ////////////////////
+
 /*
-  Using the user object above, delete the users age off of the object.
+  Which syntax was used to create the function below?
+  Uncomment the correct `console.log` underneath.
 */
 
-//Code Here
+const exclaim = function(str) {
+  return str.toUpperCase() + '!!!'
+}
+
+// console.log('arrow')
+// console.log('declaration')
+console.log('expression')
 
 
-//////////////////////////// PROBLEM 12 ////////////////////////////
+
+////////////////// PROBLEM 8 ////////////////////
+
 /*
-  Create a class called 'Cat'. Make sure to call your constructor, and require these 3 parameters: name, age, color.
-  Outside of your class, create an instance of your cat, passing in whatever values you would like.
-  Print the name of your cat instance using dot notation.
+  Which syntax was used to create the function below?
+  Uncomment the correct `console.log` underneath.
 */
 
-//Code here
+const exclaimTwo = str => {
+  return str.toUpperCase() + '!!!'
+}
 
+console.log('arrow')
+// console.log('declaration')
+// console.log('expression')
 
-
-//////////////////////////// PROBLEM 13 ////////////////////////////
 /*
-  Create a class called 'Wizard'. Make sure to call your constructor, and require these 3 parameters: name, age, favoriteSpell.
-  Add a function to your Wizard class called castSpell. This function should print "{name} has cast {favoriteSpell}"
-  Outside of your class, create an instance of your Wizard, passing in whatever values you would like.
-  Call the castSpell function on the instance of your wizard.
+  Rewrite exclaimTwo to be a single line.
+  Call your new function exclaimThree
+
+  Brownie points if you use a template string
+*/
+const exclaimThree = str => `${str.toUpperCase()}!!!`;
+console.log(exclaimThree('hello')); 
+
+
+
+////////////////// PROBLEM 9 ////////////////////
+
+/*
+  Which syntax was used to create the function below?
+  Uncomment the correct `console.log` underneath.
 */
 
-//Code here
+function exclaimFour(str) {
+  return str.toUpperCase() + '!!!'
+}
 
-//////////////////////////// PROBLEM 14 ////////////////////////////
+// console.log('arrow')
+console.log('declaration')
+// console.log('expression')
+
+
+////////////////// PROBLEM 10 ////////////////////
 /*
-    Write a class called Phone. We'll use it as if we were creating
-    phone objects to keep track of inventory using an app.
-
-    Phone will build phone objects with brand, model, storage, color, price, and sold properties.
-
-    Write a constructor that sets those values -- all of the values 
-    should come from the constructors parameters except sold, which
-    should always be set to false. We want that to be false since 
-    when we create a new phone, we're putting it in our inventory
-    and it won't be sold yet. 
-
-    Create a method called 'sell'.
-    sell should be a function that changes the value of sold to true and prints the string: '{brand} {model} has been sold.'
-    
-    Create another method called 'changePrice'. We can use this 
-    to change the price in case a phone isn't selling.
-    changePrice should take in one argument, 'newPrice'. 
-    Inside the function, reassign the value of the object's price
-    to be newPrice.
+  Write a function called nameCheck that takes in a name parameter.
+  nameCheck should check if the name equals 'Steven'. If it does, return 'What is up Steven?'
+  If the name parameter is equal to Bryan, return 'Hey Bryan!'
+  If the name parameter is anything else, return 'Cool name, NAMEPARAM' (with NAMEPARAM being the value of the name parameter being passed in).
+  Create a variable called 'nameGreeting' and set it equal to your function invoked (called) passing in an argument.
 */
 
-//Code Here
+//CODE HERE
+function nameCheck(name) {
+  if(name === 'Steven') {
+    return 'What is up Steven?'
+  } else if (name === 'Bryan') {
+    return'Hey Bryan!'
+  } else {
+    return'Cool name, ' + name
+  }
+}
 
+var nameGreeting = nameCheck('Mohamed');
+console.log(nameGreeting);
+
+
+////////////////// PROBLEM 11 ////////////////////
+/*
+  Write a function called faveColorFinder that takes in one parameter called color (which will be a string).
+  If the passed in color equals 'red', return 'red is a great color'
+  If the passed in color equals 'green', return 'green is a solid favorite color'
+  If the passed in color equals 'black', return 'so trendy'
+  Otherwise, you should return the string 'you need to evaluate your favorite color choice'
+  Create a variable called 'colorRating' and set it equal to faveColorFinder invoked (called), passing in an argument.
+*/
+
+//CODE HERE
+function faveColorFinder(color) {
+  if(color === 'red') {
+    return 'red is great color'
+  } else if(color === 'green') {
+    return 'green is a solid favorite color'
+  } else if(color === 'black') {
+    return 'trendy'
+  } else {
+  return 'you need to evaluate your favorite color choice'
+  }
+
+}
+
+var colorRating = faveColorFinder('blue');
+console.log(colorRating)
+
+////////////////// PROBLEM 12 ////////////////////
+let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
+/*
+  Create a function called printAllNames that takes in a single argument (an array of names).
+  Using a for loop, iterate over that array and console log each name.
+  Call the function, passing in the `namesArr` array (above).
+*/
+
+//CODE HERE
+function printAllNames(names) {
+  for (let i = 0; i < namesArr.length; i++) {
+    console.log(namesArr[i]);
+  }
+}
+
+printAllNames(namesArr);
+
+
+
+////////////////// PROBLEM 13 ////////////////////
+/*
+  Create a function called thatsOdd that takes in a single argument (a number).
+  Using conditional logic, if the number is even, return 'That's not odd!'
+  Otherwise, return 'That is odd indeed!'
+  Outside the function, create a variable called `oddChecker` and set it equal to your function invoked, making sure to pass in an argument.
+*/
+
+//CODE HERE
+function thatsOdd(number) {
+  if (number % 2 === 0) {
+    return "That's not odd!";
+  } else {
+    return "That is odd indeed!";
+  }
+}
+
+var oddChecker = thatsOdd(7);
+console.log(oddChecker); 
+
+////////////////// PROBLEM 14 ////////////////////
+
+/*
+    Write a one line arrow function called 'bestMovie' that takes in one parameter,
+    which will be a string of a movie title. 
+    The function should return the string: 'MOVEIEPARAM is the best movie ever!'. 
+    For example, if we passed in 'Sharknado', 
+    we would expect the function to return 'Sharknado is the best movie ever!'
+*/
+
+//CODE HERE
+const bestMovie = movieTitle => `${movieTitle} is the best movie ever!`;
+
+
+
+
+
+////////////////// PROBLEM 15 ////////////////////
+let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
+/* 
+  Create a function called 'bigOrSmall' that takes in one parameter, 'arr',  which will be an array of numbers. 
+  Inside of the bigOrSmall function, create a new array called 'answers'. 
+  Then, loop over the passed in arr parameter, and check to see if the number in the array is GREATER than 100. 
+  If it is, push 'big' as a string to the answers array. 
+  If the number is LESS than or EQUAL to 100, push 'small' as a string to the answers array. 
+  Return the answers array inside of the function to a variable called `arrayEvaluator`.
+*/
+
+//CODE HERE
+function bigOrSmall(arr) {
+  let answers = [];
   
-/*
-    Next make three new phone instances using your class.
-    Send in values of your choice. They should match these data types:
-    - brand: string
-    - model: string
-    - storage: number
-    - color: string
-    - price: number
-*/
-
-//Code Here
-
-/* 
-  Call the changePrice function on one of your phones, 
-  don't forget to pass in a new price 
-
-  Then console.log that object to see the price change
-*/ 
-
-//Code Here 
-
-
-/*
-  Now call the sell method on one of your other phone objects
-
-  Print the value of that phone's sell property to make sure it's been changed to true
-*/
-
-//Code Here 
-
-
-//////////////////////////// PROBLEM 15 ////////////////////////////
-
-/*
-  Use the spread operator to create a copy of the colors object below.
-  Store the copy in a variable called colorsCopy.
-  Note: We did not cover the spread operator in class. We do not expect you to know how to use it. Challenge yourself by going online and researching what the spread operator is and how to use it.
-*/
-
-//do not edit this object
-const colors = {
-  background: 'red',
-  highlight: 'blue',
-  text: 'yellow'
-}
-//do not edit this object
-
-//Code Here 
-
-
-
-/*
- Now use the spread operator to combine the following 2 objects into one. 
- Call the new variable helensInfo. 
- When they combine, none of the properties should be repeated.
-*/
-
-//do not edit the objects below
-const contactInfo = {
-  firstName: 'Helen',
-  lastName: 'Parr',
-  phoneNumber: 1234445555,
-  email: 'helen@mymail.com',
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 100) {
+      answers.push('big');
+    } else {
+      answers.push('small');
+    }
+  }
+  
+  return answers;
 }
 
-const shippingInfo = {
-  firstName: 'Helen',
-  lastName: 'Parr',
-  street: '100 E. Main Street',
-  city: 'Anytown',
-  state: 'AZ',
-  zipCode: 85004,
+let arrayEvaluator = bigOrSmall(bigOrSmallArray);
+console.log(arrayEvaluator); 
+
+
+////////////////// PROBLEM 16 ////////////////////
+let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
+let loser = 'Glimmer'
+/*
+  Write a function that is called theEliminator, which takes in two arguments, contestants (which will each be an array of strings), and loser (which will be a string).
+  The function should loop over the array of contestant names. If the loser string appears in the array, splice it out. Return the new contestants array.
+*/
+
+//CODE HERE
+function theEliminator(contestants, loser) {
+  for (let i = 0; i < contestants.length; i++) {
+    if (contestants[i] === loser) {
+      contestants.splice(i, 1)
+      break; 
+    }
+  }
+  
+  return contestants;
 }
-//do not edit the objects above
 
-//Code Here
-
-
-//Print helensInfo to see what it looks like, there should be no repeating properties.
+let newContestants = theEliminator(contestants, loser);
+console.log(newContestants); 
 
 
-//////////////////////////// PROBLEM 16 ////////////////////////////
+////////////////// PROBLEM 17 ////////////////////
+let sampleString = "Hi, my name is Kylo."
+/*
+  Write a function that takes in one argument, a string. The function should then console.log that string, in entirely uppercase characters.
+  Invoke the function, passing in the sampleString (above).
+*/
+
+//CODE HERE
+function logUppercaseString(str) {
+  console.log(str.toUpperCase());
+}
+
+logUppercaseString(sampleString); 
+
+
+
+////////////////// PROBLEM 18 ////////////////////
+/*
+  Write a function called emailCheck that takes in
+  one parameter - email.
+  Inside the function, convert the email param into 
+  a string and trim off any excess whitespace.
+  Check to make sure the email contains an '@' symbol.
+  If it does, return 'email verified' and if doesn't, 
+  return 'must provide a valid email address'
+*/
+function emailCheck(email) {
+  let spacelessEmail = String(email).trim();
+  if (spacelessEmail.includes('@')) {
+    return 'email verified';
+} else {
+  return 'must provide a valid email address'
+}
+}
+
+console.log(emailCheck('example1@email.com'))
+console.log(emailCheck('example2-email'))
+
+////////////////// PROBLEM 19 ////////////////////
+/*
+  Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
+  Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
+*/
+
+//CODE HERE
+function dolla(gold) {
+  return Math.floor(gold / 3);
+}
+
+let totalFrogs = dolla(10);
+console.log(totalFrogs);
+////////////////// PROBLEM 20 ////////////////////
+/*
+  You might have noticed a slight bug in the previous problem. If you were to pass in 4 gold, the function would return to you 1.3333... However, you can't really go to a store and by 1.333 products. You would just be able to purchase 1 product. Re-write the function you used in the previous problem (give it the same name, just add a 2 to the end of it) that fixes this bug. Invoke the function and store the returned value to a variable called `totalFrogs2`.
+*/
+
+//CODE HERE
+function dolla2(gold) {
+  return Math.floor(gold / 3);
+}
+
+let totalFrogs2 = dolla2(4);
+console.log(totalFrogs2);
+
+
+////////////////// PROBLEM 21 ////////////////////
+let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+/*
+  Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
+*/
+
+//CODE HERE
+function checkAscendingOrder(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < arr[i - 1]) {
+      return false;
+    }
+  }
+  return true;
+}
+
+let arrayIsAscending = checkAscendingOrder(sampleArray);
+console.log(arrayIsAscending);
+
+
+////////////////// PROBLEM 22 ////////////////////
+
+let duck = "cute";
+
+function bathroom() {
+  let rubberDuck = "squeaky";
+  function bathtub() {
+    let sailorDuck = "nautical";
+  }
+}
+
+function pond() {
+  let realDuck = "fluffy";
+}
 
 /*
-  Create a class called Vehicle. Make sure to call your constructor, 
-  and require these 3 parameters: capacity (how many passengers), color, and mileage.
-
-  Write a method inside your class called 'move'.
-  The move function should take in one parameter, miles.
-  Inside the function, add the number of miles to the object's mileage.
-  And finally, print the value of the mileage.
+  There are 4 variables above: duck, rubberDuck, sailorDuck and realDuck.
+  All within different scopes.
+  Given the functions and variables above, edit the arrays below to contain only the appropriate variable names (as strings).
 */
 
-//Code Here 
+//This array should contain the variable names (as strings) accessible in the global scope.
+let globalScope = ["duck"]
 
+//This array should contain the variable names (as strings) accessible in the bathroom function.
+let bathroomScope = ["rubberDuck"]
 
-/*
-  Create a vehicle using your new class and save it to a variable called myFirstVehicle
-*/
+//This array should contain the variable names (as strings) accessible in the bathtub function.
+let bathtubScope = ["sailorDuck"]
 
-//Code Here
+//This array should contain the variable names (as strings) accessible in the pond function.
+let pondScope = ["realDuck"]
 
-
-/* 
-  Now we'll create a class that's based off of the vehicle class. 
-
-  Write a class called Motorcycle that *extends* the Vehicle class. In the constructor, 
-  make sure you require all of the parameters from the Vehicle class as well as 2 
-  new ones: make and isCool. (Hint: don't forget to call the super function)
-*/
-
-//Code Here
-
-/*
-  Create a Motorcycle using your new class and save it to a variable called myFirstMotorcycle
-*/
-
-//Code Here 
-
-/*
-  Call the move function on myFirstMotorcycle (don't forget the parameter)
-*/
-
-/*
-  Let's make another class based off of Vehicle. 
-
-  Write a class called Boat that *extends* the Vehicle class. The constructor should take in
-  all the same arguments as Vehicle plus 3 new ones: 
-  name (boats gotta have cool names), type (ski boat, yacht, etc), and isSeaworthy.
-
-  Create a method inside of the Boat class called checkSeaworthiness 
-  Inside the method, check to see if the boat is seaworthy
-  If it is, console.log a string: 'The {color} {type} {name} is seaworthy!'
-  If it isn't, console.log a string: 'You need to get your {type} in shape!'
-
-  Write a second function in this class called performMaintenance 
-  This function should set isSeaworthy to be true
-*/
-
-//Code Here
-
-
-/*
-  Create a new boat using your class. You can choose whatever values you like for all the 
-  properties except isSeaworthy -- make that one false. Call your variable myFirstBoat.
-*/
-
-//Code Here
-
-/*
-  Call the checkSeaworthiness method on your new boat
-*/
-
-//Code Here
-
-/*
-  Now run the performMaintenance method on your boat
-*/
-
-//Code Here 
-
-/*
-  Check the seaworthiness once more (you should be ready for the water!)
-*/
-
-//Code Here
