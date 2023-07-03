@@ -50,7 +50,7 @@ const entree = {
 */
 
 //CODE HERE
-console.log(pizza.popularity);
+console.log(entree.popularity);
 
 
 /*
@@ -61,7 +61,7 @@ console.log(pizza.popularity);
 */
 
 //CODE HERE
-console.log(pizza.tags[1]);
+console.log(entree.tags[1]);
 
 
 /*
@@ -72,8 +72,8 @@ console.log(pizza.tags[1]);
 */
 
 //CODE HERE
-const { price } = pizza;
-console.log(price);
+const { price } = entree;
+console.log(entree);
 
 
 /*
@@ -84,7 +84,7 @@ console.log(price);
 */
 
 //CODE HERE
-const { category } = pizza;
+const { category } = entree;
 console.log(category);
 
 
@@ -101,6 +101,49 @@ console.log(category);
 */
 
 //CODE HERE
+const foodArr = [
+    {
+      name: "Cheeseburger",
+      price: 8.99,
+      category: "entree",
+      popularity: 8,
+      rating: 4.2,
+      tags: ["beef", "cheese"],
+    },
+    {
+      name: "Caesar Salad",
+      price: 6.99,
+      category: "appetizer",
+      popularity: 6,
+      rating: 4.0,
+      tags: ["salad", "vegetarian"],
+    },
+    {
+      name: "BBQ steak ribs",
+      price: 15.99,
+      category: "entree",
+      popularity: 9,
+      rating: 4.5,
+      tags: ["steak", "bbq"],
+    },
+    {
+      name: "Mango Juice",
+      price: 7.99,
+      category: "beverage",
+      popularity: 9.5,
+      rating: 4.7,
+      tags: ["drink", "fruits"],
+    },
+    {
+      name: "Salted Caramel Cheese Cake",
+      price: 5.99,
+      category: "dessert",
+      popularity: 10,
+      rating: 5.0,
+      tags: ["cake", "cheese"],
+    },
+  ];
+  
 
 
 
@@ -120,6 +163,11 @@ console.log(category);
 
 // const filteredFood = foodArr.filter(/* CALLBACK HERE */)
 
+const filteredFood = foodArr.filter(element => element.tags.includes(`vegetarian`))
+console.log(filteredFood)
+
+  
+  
 
 
 //////////////////PROBLEM 5////////////////////
@@ -162,6 +210,18 @@ console.log(category);
 */
 
 //CODE HERE
+const filterByProperty = (property, number, type) => {
+    let filteredArr = [];
+    if (type === `above`){
+        filteredArr = foodArr.filter((item) => (item[property] > number))   
+        
+    }
+   
+    else if (type === `below`){
+        filteredArr= foodArr.filter((item) => (item[property] < number))
+    }
+    return filteredArr
+}
 
 
 /*
@@ -172,3 +232,5 @@ console.log(category);
 */
 
 //CODE HERE
+
+console.log(filterByProperty(`price`, 14, `below`))
