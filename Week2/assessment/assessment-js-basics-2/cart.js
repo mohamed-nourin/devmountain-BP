@@ -101,7 +101,7 @@ console.log(calcFinalPrice(100, 20, .07))
 //CODE HERE
 const customer = {
     fullName: `John Doe`,
-    phoneNumber: `720-552-7896`
+    phoneNumber: `720-552-7896`,
     emailAddress: `johndoe@gmail.com`,
     cardInfo:  `7483 7538 2415 6410`,
 };
