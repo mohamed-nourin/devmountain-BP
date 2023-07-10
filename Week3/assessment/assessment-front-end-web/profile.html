@@ -1,0 +1,134 @@
+<a href="./home.html"><< Back </a>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Profile</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+    }
+    
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+    
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+    
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    p {
+      margin-bottom: 20px;
+    }
+    
+    ul {
+      margin-bottom: 20px;
+    }
+    
+    form {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 5px;
+      margin-bottom: 10px;
+    }
+    
+  .button {
+	background-color: yellow;
+  color: black;
+	height: 55px;
+  width: 200px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>My Website</h1>
+      <a href="home.html">Home</a>
+      <a href="profile.html">Profile</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <h1>My Profile</h1>
+    
+    <h2>Skills</h2>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>Python</li>
+    </ul>
+    
+    <h2>Interests</h2>
+    <ul>
+      <li>Web development</li>
+      <li>Artificial intelligence</li>
+      <li>Machine learning</li>
+      <li>Reading</li>
+    </ul>
+    
+    <h2>Career Goals</h2>
+    <p>I aspire to become a full-stack web developer and work on innovative projects that make a positive impact on people's lives. I am passionate about creating intuitive and user-friendly interfaces that provide exceptional user experiences.</p>
+    
+    <button class = "button" id="color">My Favorite Color</button>
+    <button class = "button" id="place">My Favorite Place</button>
+    <button class = "button" id="ritual">My Favorite Ritual</button>
+
+    <h2>Contact Me</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="text" id="email" name="email" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      
+      <input type="submit" value="Submit" class="button">
+    </form>
+  </div>
+  <script src="profile.js"></script>
+</body>
+</html>
