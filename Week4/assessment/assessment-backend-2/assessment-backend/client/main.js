@@ -22,15 +22,62 @@ const getFortune = () => {
         .catch(err => console.log(err));
 };
 
+const saveProfile = (event) => {
+    event.preventDefault();
+    var firstName = document.getElementById('firstName').value;
+    var lastName = document.getElementById('lastName').value;
+    var email = document.getElementById('email').value;
+
+    var data = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email
+    };
+
+    axios.post('/api/profile', data)
+        .then(response => {
+            console.log(response.data);
+            alert('Profile saved successfully!');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+};
+
+const updateProfile = (event) => {
+    event.preventDefault();
+    var firstName = document.getElementById('firstName').value;
+    var lastName = document.getElementById('lastName').value;
+    var email = document.getElementById('email').value;
+
+    var data = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email
+    };
+    axios.put('/api/profile', data)
+        .then(response => {
+            console.log(response.data);
+            alert('Profile updated successfully!');
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+};
+
+
+
+
+
 const submitFavoriteHobbies = (event) => {
     event.preventDefault();
     let body = {
-        'hobbiesButton': document.getElementById('hobbiesButton').value,
+        'hobbies': document.getElementById('hobbiesButton').value,
     }
     axios.post("http://localhost:4000/api/hobbies/", body)
         .then(res => {
             const data = res.data
-            alert(data);
+            alert("Submitted successfully!");
             console.log(body)
         })
         .catch(err => console.log(err));
@@ -67,9 +114,16 @@ const deleteEmail = (event) => {
 
 complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click', getFortune)
+document.getElementById('emailButton').addEventListener('click', saveProfile);
+document.getElementById('updateButton').addEventListener('click', updateProfile);
 favoriteHobbiesBtn.addEventListener('click', submitFavoriteHobbies)
 emailBtn.addEventListener('click', joinEmail)
 unsubscribeBtn.addEventListener('click', deleteEmail)
+
+
+
+
+
 
 
 

@@ -1,6 +1,6 @@
 const userDatabase = []
 let id = 0
-// let profile = []
+let userProfile = {}
 
 module.exports = {
     getCompliment: (req, res) => {
@@ -22,18 +22,45 @@ module.exports = {
         res.status(200).send(fortune);
     },
 
+    saveProfile(req, res) {
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const email = req.body.email;
+
+    userProfile = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email
+    };
+
+    res.status(200).send('Profile saved successfully!');
+    },
+
+    updateProfile(req, res) {
+    const firstName = req.body.firstName;
+    const lastName = req.body.lastName;
+    const email = req.body.email;
+
+    userProfile.firstName = firstName;
+    userProfile.lastName = lastName;
+    userProfile.email = email;
+    res.status(200).send('Profile updated successfully!');
+    },
+
+
+
     submitFavoriteHobbies: (req, res) => {
-    let { affirmation } = req.body;
-    res.status(200).send(`Daily affirmation: ${affirmation}`)
-    return affirmation
+    let { hobbies } = req.body;
+    res.status(200).send()
+    return hobbies
     },
 
     joinEmail: (req, res) => {
-        let { email } = req.body
-        let newUser = { ...req.body, id: id };
-        userDatabase.push(newUser);
-        id++
-        res.status(200).send(newUser)
+    let { email } = req.body
+    let newUser = { ...req.body, id: id };
+    userDatabase.push(newUser);
+    id++
+    res.status(200).send(newUser)
     },
 
     deleteEmail: (req, res) => {
