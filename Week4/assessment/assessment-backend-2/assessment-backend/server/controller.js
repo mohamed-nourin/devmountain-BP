@@ -15,7 +15,7 @@ module.exports = {
 
     
     getFortune: (req, res) => {
-        let fortunes = ["Don’t just think, act!", "Go take a rest; you deserve it.", "It’s time to get moving. Your spirits will lift accordingly.", "Love lights up the world."];
+        let fortunes = [`Don’t just think, act!", "Go take a rest; you deserve it.", "It’s time to get moving. Your spirits will lift accordingly.", "Love lights up the world.`];
 
         let random = Math.floor(Math.random() * fortunes.length);
         let fortune = fortunes[random];
@@ -46,8 +46,6 @@ module.exports = {
     userProfile.email = email;
     res.status(200).send('Profile updated successfully!');
     },
-
-
 
     submitFavoriteHobbies: (req, res) => {
     let { hobbies } = req.body;

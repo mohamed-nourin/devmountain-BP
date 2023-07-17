@@ -1,6 +1,8 @@
 const complimentBtn = document.getElementById("complimentButton");
 const fortuneBtn = document.getElementById('fortuneButton');
-const favoriteHobbiesBtn = document.getElementById('hobbiesButton')
+const saveProfileBtn = document.getElementById('saveProfile');
+const updateProfileBtn = document.getElementById('updateProfile');
+const favoriteHobbiesBtn = document.getElementById('hobbiesButton');
 const emailBtn = document.getElementById('emailButton');
 const unsubscribeBtn = document.getElementById('unsubscribeButton');
 
@@ -65,10 +67,6 @@ const updateProfile = (event) => {
         });
 };
 
-
-
-
-
 const submitFavoriteHobbies = (event) => {
     event.preventDefault();
     let body = {
@@ -82,8 +80,6 @@ const submitFavoriteHobbies = (event) => {
         })
         .catch(err => console.log(err));
 };
-
-
 
 const joinEmail = (event) => {
     event.preventDefault();
@@ -110,7 +106,6 @@ const deleteEmail = (event) => {
         })
         .catch(err => console.log('Could not find user'));
 };
-
 
 complimentBtn.addEventListener('click', getCompliment)
 fortuneBtn.addEventListener('click', getFortune)
