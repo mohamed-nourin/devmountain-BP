@@ -4,61 +4,31 @@
     <title>Back End Assessment</title>
   </head>
   <body class="container">
-    <h4 class="center">Join our Gym</h4>
+    <h1>User Profile</h1>
 
     <button id="complimentButton" class="compliment-btn">Get a compliment</button>
     <button id="fortuneButton">Fortune cookie</button>
     <br>
     <br>
-<section>
-      <h2>Profile</h2>
-      <form id="name">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" placeholder="enter fullname" />
-        <br />
-        <br />
-        <label for="favoriteSong">Favorite Song:</label>
-        <input type="text" id="favoriteSong" placeholder="enter song" />
-        <br />
-        <br />
-        <label for="hobbies">Hobbies</label>
-        <input type="text" id="hobbies" placeholder="enter hobbies">
-        <br>
-        <br>
-        <button type="submit">Submit</button>
-      </form>
-    </section>
 
-    <section>
-      <h3>Update Profile</h3>
-      <form id="update-form">
-        <label for="member-id">Member ID:</label>
-        <input 
-        type="number" id="member-id" placeholder="member ID"/>
-        <br />
-        <br /> 
-        <label for="update-fullname">Full Name:</label>
-        <input
-          type="text"
-          id="update-favoriteSong"
-          placeholder="enter a new song name to update"
-        />
-        <br />
-        <br />
-        <label for="update-hobbies">Hobbies:</label>
-        <input
-          type="text"
-          id="update-hobbies"
-          placeholder="enter new hobbies to update"
-        />
-        <br />
-        <br />
-        <button type="submit">Update Profile</button>
+    <form action="">
+      <input type="text"  id="hobbies" placeholder="enter hobbies">
+      <button id="hobbiesButton">Submit</button>
+    </form>
+    <br>
+    <br>
+    <form>
+        <h4>Sign up for Newsletter</h4>
+          <input type="email" id="email" placeholder="enter email" required>
+            <button type="submit" id="emailButton">Submit</button>
+            <button id="unsubscribeButton">Unsubscribe</button>
       </form>
-    </section>
-  
+    
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>
     
   </body>
 </html>
+
+
+

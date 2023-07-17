@@ -9,11 +9,14 @@ app.use(express.json());
 
 
 const controller = require('./controller')
-const { getCompliment, getFortune } = controller
+const { getCompliment, getFortune, joinEmail, deleteEmail, submitFavoriteHobbies } = controller
 
 
 app.get("/api/compliment", getCompliment);
 app.get("/api/fortune", getFortune);
+app.post("/api/affirmation", submitFavoriteHobbies);
+app.post("/api/email", joinEmail);
+app.delete("/api/unsubscribe", deleteEmail);
 
 
 

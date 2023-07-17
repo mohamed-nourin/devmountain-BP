@@ -1,5 +1,6 @@
 const userDatabase = []
 let id = 0
+// let profile = []
 
 module.exports = {
     getCompliment: (req, res) => {
@@ -12,7 +13,7 @@ module.exports = {
         res.status(200).send(randomCompliment);
     },
 
-    //feature #1: Fortune cookie
+    
     getFortune: (req, res) => {
         let fortunes = ["Don’t just think, act!", "Go take a rest; you deserve it.", "It’s time to get moving. Your spirits will lift accordingly.", "Love lights up the world."];
 
@@ -21,24 +22,29 @@ module.exports = {
         res.status(200).send(fortune);
     },
 
+    submitFavoriteHobbies: (req, res) => {
+    let { affirmation } = req.body;
+    res.status(200).send(`Daily affirmation: ${affirmation}`)
+    return affirmation
+    },
 
+    joinEmail: (req, res) => {
+        let { email } = req.body
+        let newUser = { ...req.body, id: id };
+        userDatabase.push(newUser);
+        id++
+        res.status(200).send(newUser)
+    },
 
-    //feature #2: user profile (name, age, fitness level (drop down menue), goals)
-    
-
-
-    //feature #3: favorite music genre
-
-
-    //feature #4: sign up for a newsletter
-
-
-
-}
-
-
-
-
-
-
-
+    deleteEmail: (req, res) => {
+        let existingEmail = req.params.email
+        for (let i = 0; i <= userDatabase.length; i++) {
+            if (userDatabase[i].email === existingEmail) {
+                userDatabase.splice(i, 1)
+                res.status(200).send(`User Unsubscribed`)
+            } else {
+                res.status(400).send('User not found')
+            }
+        }
+    }
+};
