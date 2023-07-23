@@ -8,14 +8,6 @@ const unsubscribeBtn = document.getElementById('unsubscribeBtn');
 const emailInput = document.getElementById('emailInput');
 const hobbiesInput = document.getElementById('hobbiesInput');
 
-complimentBtn.addEventListener('click', getCompliment);
-fortuneBtn.addEventListener('click', getFortune);
-saveProfileForm.addEventListener('submit', saveProfile);
-updateProfileForm.addEventListener('submit', updateProfile);
-hobbiesButton.addEventListener('click', submitFavoriteHobbies);
-emailBtn.addEventListener('click', joinEmail);
-unsubscribeBtn.addEventListener('click', deleteEmail);
-
     function getCompliment() {
         axios.get("http://localhost:4000/api/compliment")
             .then(res => {
@@ -88,7 +80,7 @@ unsubscribeBtn.addEventListener('click', deleteEmail);
         axios.post("http://localhost:4000/api/hobbies", body)
             .then(res => {
                 const data = res.data;
-                alert("Submitted successfully!");
+                alert("Hobbies submitted successfully!");
                 console.log(body);
             })
             .catch(err => console.log(err));
@@ -121,6 +113,14 @@ unsubscribeBtn.addEventListener('click', deleteEmail);
             })
             .catch(err => console.log('Error:', err));
     }
+
+complimentBtn.addEventListener('click', getCompliment);
+fortuneBtn.addEventListener('click', getFortune);
+saveProfileForm.addEventListener('submit', saveProfile);
+updateProfileForm.addEventListener('submit', updateProfile);
+hobbiesButton.addEventListener('click', submitFavoriteHobbies);
+emailBtn.addEventListener('click', joinEmail);
+unsubscribeBtn.addEventListener('click', deleteEmail);
 
 //click should be for buttons 
 //submit for forms
