@@ -10,8 +10,8 @@
     <button id="fortuneButton">Fortune cookie</button>
     <br>
     <br>
-
-  <form id="saveProfile">
+    <h3>Create a Profile</h3>
+      <form id="saveProfileForm">
     <label for="firstName">First Name:</label>
     <input type="text" id="firstName" placeholder="Enter your first name" required>
       <br>
@@ -27,31 +27,45 @@
       <br>
       <br>
   
-    <button type="submit">Save Profile</button>
-    <button type="button" id="updateButton">Update Profile</button>
-  </form>
+    <button type="submit" id="saveBtn">Save Profile</button>
+    </form>
       <br>
       <br>
+    <form id="updateProfileForm">
+    <h3>Update Profile</h3>
+    <label for="userId">Id:</label>
+    <input type="number" id="userId">
+    <br>
+    <br>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="updateFirstName" placeholder="Enter First Name">
+    <br><br>
 
-  <form id="updateProfile">
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="updateLastName" placeholder="Enter Last Name">
+    <br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="updateEmail" placeholder="Enter Email">
+    <br><br>
+
+    <button type="submit" id="updateButton">Update Profile</button>
+    </form>
+
     <h3>Favorite Hobbies:</h3>
-    <input type="text"  id="hobbies" placeholder="enter hobbies">
+    <input type="text" id="hobbiesInput" placeholder="enter hobbies">
     <button id="hobbiesButton">Submit</button>
-  </form>
-      <br>
-      <br>
-  <form>
+    <br>
+    <br>
+    <form id="newsLetterForm">
     <h4>Sign up for Newsletter</h4>
-    <input type="email" id="email" placeholder="enter email" required>
-    <button type="submit" id="emailButton">Submit</button>
-    <button id="unsubscribeButton">Unsubscribe</button>
-  </form>
-    
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="main.js"></script>
-    
-  </body>
+    <input type="email" id="emailInput" placeholder="enter your email" required>
+    <button type="submit" id="emailBtn">Submit</button>
+    <button id="unsubscribeBtn">Unsubscribe</button>
+    </form>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="main.js"></script>
+
+</body>
 </html>
-
-
-

@@ -1,6 +1,8 @@
-const userDatabase = []
-let id = 0
+let id = 1
 let userProfile = {}
+const emails = []
+const userDatabase = []
+
 
 module.exports = {
     getCompliment: (req, res) => {
@@ -13,9 +15,9 @@ module.exports = {
         res.status(200).send(randomCompliment);
     },
 
-    
+
     getFortune: (req, res) => {
-        let fortunes = [`Don’t just think, act!", "Go take a rest; you deserve it.", "It’s time to get moving. Your spirits will lift accordingly.", "Love lights up the world.`];
+        let fortunes = ["Don’t just think, act!", "Go take a rest; you deserve it.", "It’s time to get moving. Your spirits will lift accordingly.", "Love lights up the world."];
 
         let random = Math.floor(Math.random() * fortunes.length);
         let fortune = fortunes[random];
@@ -23,53 +25,77 @@ module.exports = {
     },
 
     saveProfile(req, res) {
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
-    const email = req.body.email;
+        const firstName = req.body.firstName;
+        const lastName = req.body.lastName;
+        const email = req.body.email;
 
-    userProfile = {
-        firstName: firstName,
-        lastName: lastName,
-        email: email
-    };
-
-    res.status(200).send('Profile saved successfully!');
+        userProfile = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            userId: id
+        };
+        userDatabase.push(userProfile);
+        console.log(userDatabase);
+        id++
+        res.status(200).send('Profile saved successfully!');
     },
-
+    
+    
     updateProfile(req, res) {
-    const firstName = req.body.firstName;
-    const lastName = req.body.lastName;
-    const email = req.body.email;
+        const firstName = req.body.firstName;
+        const lastName = req.body.lastName;
+        const email = req.body.email;
+        const userId = req.body.userId;
+        const indexofUser = userDatabase.findIndex((user) =>  user.userId === +userId)
+        console.log(indexofUser);
+        if (indexofUser === -1) {
+            res.status(400).send("user not found");
+            return;
+        }
 
-    userProfile.firstName = firstName;
-    userProfile.lastName = lastName;
-    userProfile.email = email;
-    res.status(200).send('Profile updated successfully!');
+
+        console.log(userDatabase[indexofUser]);
+        userDatabase[indexofUser].firstName = firstName;
+        userDatabase[indexofUser].lastName = lastName;
+        userDatabase[indexofUser].email = email;
+        
+        console.log(userDatabase);
+        res.status(200).send('Profile updated successfully!');
     },
 
     submitFavoriteHobbies: (req, res) => {
-    let { hobbies } = req.body;
-    res.status(200).send()
-    return hobbies
+        let { hobbies } = req.body;
+        res.status(200).send()
+        return hobbies
     },
 
     joinEmail: (req, res) => {
-    let { email } = req.body
-    let newUser = { ...req.body, id: id };
-    userDatabase.push(newUser);
-    id++
-    res.status(200).send(newUser)
+        const { email } = req.body;
+        const newUser = { email, id: id };
+        emails.push(newUser);
+        id++;
+        res.status(200).send(newUser);
     },
 
     deleteEmail: (req, res) => {
-        let existingEmail = req.params.email
-        for (let i = 0; i <= userDatabase.length; i++) {
-            if (userDatabase[i].email === existingEmail) {
-                userDatabase.splice(i, 1)
-                res.status(200).send(`User Unsubscribed`)
-            } else {
-                res.status(400).send('User not found')
+        const { existingEmail } = req.params;
+        console.log('Received email:', existingEmail);
+
+        let found = false;
+
+        for (let i = 0; i < emails.length; i++) {
+            if (emails[i].email === existingEmail) {
+                emails.splice(i, 1);
+                found = true;
+                break;
             }
+        }
+
+        if (found) {
+            res.status(200).send(`User Unsubscribed`);
+        } else {
+            res.status(400).send('User not found');
         }
     }
 };
