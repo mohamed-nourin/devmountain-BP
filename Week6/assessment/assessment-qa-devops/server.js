@@ -3,11 +3,14 @@ const bots = require("./src/botsData");
 const shuffle = require("./src/shuffle");
 const path = require('path'); 
 
+
 const playerRecord = {
   wins: 0,
   losses: 0,
 };
 const app = express();
+
+app.use(express.static(`${__dirname}/public`))
 
 app.use(express.json());
 
